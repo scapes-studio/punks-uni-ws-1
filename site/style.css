@@ -1,66 +1,143 @@
 :root {
-    --box-padding: 1.5rem;
-    --border-radius: 0.5rem;
+  --box-padding: 1.5rem;
+
+  /* Colors */
+  --black: black;
+  --dark-bg: rgb(14 11 18);
+  --primary: #ae44d5;
+  --action: rgb(58 50 86 / 40%);
+  --action-active: rgb(58 50 86 / 80%);
+
+  /* Borders */
+  --border-radius: 0.5rem;
+  --border: 3px solid rgb(20 15 25);
+  --border-dark: 3px solid var(--dark-bg);
+}
+
+/* space-mono-regular - latin */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('../fonts/space-mono-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/space-mono-v10-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* space-mono-700italic - latin */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: italic;
+  font-weight: 700;
+  src: local(''),
+    url('../fonts/space-mono-v10-latin-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/space-mono-v10-latin-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 body {
-    background-color: black;
-    color: white;
-    min-height: 100vh;
-    font-family: monospace;
-
-    display: flex;
-    align-items: center;
+  background-color: var(--dark-bg);
+  color: white;
+  min-height: 100vh;
+  font-family: 'Space Mono', monospace;
 }
 
 main {
-    max-width: 50rem;
-    margin: 2rem auto 4rem;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    border: 2px solid rgb(47, 33, 61);
+  max-width: 40.5rem;
+  overflow: hidden;
 }
 
 header {
-    position: relative;
+  background-color: var(--black);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-bottom: var(--border);
+}
+
+header iframe {
+  width: 40.5rem;
+  height: calc(40.5rem / 3);
 }
 
 header img:nth-child(2) {
-    border-radius: 50%;
-    border: 2px solid black;
-    max-width: 30vw;
+  border-radius: 50%;
+  border: var(--border-dark);
+  max-width: 30vw;
 
-    position: absolute;
-    bottom: -2rem;
-    left: var(--box-padding);
+  position: absolute;
+  bottom: -2rem;
+  left: var(--box-padding);
 }
 
 section {
-    background-color: rgb(25, 20, 30);
-    padding: 2.75rem var(--box-padding) var(--box-padding);
+  padding: 2.25rem var(--box-padding) var(--box-padding);
 }
 
 h1 {
-    color: #d767d6;
-    font-size: 1.618rem;
+  color: var(--primary);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: 700;
+}
+
+p {
+  opacity: 0.8;
+  font-size: 0.8rem;
 }
 
 ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin: 1.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0 0;
 }
 
 ul li a {
-    display: block;
-    padding: 0.5rem 1rem;
-    background-color: rgba(50, 50, 50, 0.4);
-    border-radius: var(--border-radius);
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: var(--action);
+  border-radius: var(--border-radius);
+  transition: background .4s;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+ul li a:hover,
+ul li a:focus,
+ul li a:active {
+  background-color: var(--action-active);
 }
 
-@media (min-width: 50rem) {
-    header img:nth-child(2) {
-        max-width: 14rem;
-    }
+@media (min-width: 40.5rem) {
+  body {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+  }
+
+  main {
+    background-color: var(--dark-bg);
+    margin: 2rem auto 4rem;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0.25rem 3rem 2rem rgb(95 45 145 / 9%);
+    animation: gradient 5s infinite alternate;
+  }
+
+  header img:nth-child(2) {
+    max-width: 10rem;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    box-shadow: 0 0.25rem 3rem 2rem rgb(95 45 145 / 9%);
+  }
+  50% {
+    box-shadow: -0.5rem -0.5rem 3rem 2rem rgb(100 45 130 / 15%);
+  }
+  100% {
+    box-shadow: 1rem 1.45rem 5rem 3.9rem rgb(95 45 170 / 13%);
+  }
 }
