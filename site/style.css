@@ -1,0 +1,66 @@
+:root {
+    --box-padding: 1.5rem;
+    --border-radius: 0.5rem;
+}
+
+body {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    font-family: monospace;
+
+    display: flex;
+    align-items: center;
+}
+
+main {
+    max-width: 50rem;
+    margin: 2rem auto 4rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 2px solid rgb(47, 33, 61);
+}
+
+header {
+    position: relative;
+}
+
+header img:nth-child(2) {
+    border-radius: 50%;
+    border: 2px solid black;
+    max-width: 30vw;
+
+    position: absolute;
+    bottom: -2rem;
+    left: var(--box-padding);
+}
+
+section {
+    background-color: rgb(25, 20, 30);
+    padding: 2.75rem var(--box-padding) var(--box-padding);
+}
+
+h1 {
+    color: #d767d6;
+    font-size: 1.618rem;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+}
+
+ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    background-color: rgba(50, 50, 50, 0.4);
+    border-radius: var(--border-radius);
+}
+
+@media (min-width: 50rem) {
+    header img:nth-child(2) {
+        max-width: 14rem;
+    }
+}

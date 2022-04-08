@@ -7,13 +7,13 @@ Let's build a little mini business card together...
 
 ## TODOs
 
-- [ ] Get set up (Code Editor...)
-- [ ] HTML & CSS
-- [ ] Upload to IPFS
-- [ ] Link with ENS Domain
+- [x] Get set up (Code Editor...)
+- [x] HTML & CSS
+- [x] Upload to IPFS
+- [x] Link with ENS Domain
+- [x] Use IPNS to update website without paying gas
 
 ### Extras
 
 - [ ] Use NPM & some build tool...
-- [ ] Use IPNS to update website without paying gas
 - [ ] Read data from ENS domain
